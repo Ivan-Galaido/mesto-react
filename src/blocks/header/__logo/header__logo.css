@@ -4,24 +4,19 @@
   background-repeat: no-repeat;
   display: block;
   max-width: 142px;
+  width: 100%;
   height: 33px;
-  transition: all .8s;
+  transition: .6s ease;
 }
 
 .header__logo:hover {
-  opacity: .5;
+  opacity: .6;
   cursor: pointer;
-}
-
-@media screen and (max-width: 938px) {
-  .header__logo {
-    transform: translateX(27px);
-  }
 }
 
 @media screen and (max-width: 635px) {
   .header__logo {
     max-width: 104px;
-    height: 24px;
+    height: 25px;
   }
 }

@@ -1,15 +1,13 @@
 .header {
+  flex: 0 0 auto;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 880px;
+  width: 100%;
   min-width: 242px;
-  padding-top: 45px;
-  min-height: 73px;
-  border-bottom: 1px solid rgba(54, 54, 54, .7);
   margin: 0 auto;
-}
-
-@media screen and (max-width: 635px) {
-  .header {
-    padding-top: 28px;
-    min-height: 55px;
-  }
+  transition: .6s ease;
 }
