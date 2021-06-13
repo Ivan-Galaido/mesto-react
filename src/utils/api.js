@@ -14,7 +14,7 @@ class Api {
       headers: {
         authorization: this._token,
       },
-    }).then((res) => this._checkServerResponse(res));
+    }).then(this._checkServerResponse);
   }
 
   getUserInfo() {
@@ -23,7 +23,7 @@ class Api {
       headers: {
         authorization: this._token,
       },
-    }).then((res) => this._checkServerResponse(res));
+    }).then(this._checkServerResponse);
   }
 
   setUserInfo(username, description) {
@@ -37,7 +37,7 @@ class Api {
         name: username,
         about: description,
       }),
-    }).then((res) => this._checkServerResponse(res));
+    }).then(this._checkServerResponse);
   }
 
   addCard(name, link) {
@@ -51,7 +51,7 @@ class Api {
         name: name,
         link: link,
       }),
-    }).then((res) => this._checkServerResponse(res));
+    }).then(this._checkServerResponse);
   }
 
   deleteCard(cardId) {
@@ -60,7 +60,7 @@ class Api {
       headers: {
         authorization: this._token,
       },
-    }).then((res) => this._checkServerResponse(res));
+    }).then(this._checkServerResponse);
   }
 
   changeLikeCardStatus(cardId, isLiked) {
@@ -69,7 +69,7 @@ class Api {
       headers: {
         authorization: this._token,
       },
-    }).then((res) => this._checkServerResponse(res));
+    }).then(this._checkServerResponse);
   }
 
   setUserAvatar(avatar) {
@@ -82,7 +82,7 @@ class Api {
       body: JSON.stringify({
         avatar: avatar,
       }),
-    }).then((res) => this._checkServerResponse(res));
+    }).then(this._checkServerResponse);
   }
 }
 
