@@ -3,7 +3,7 @@ import { handleValidity, resetValidation } from "../utils/form-validation";
 import PopupWithForm from "./PopupWithForm";
 
 function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, isLoading, onOverlayClose }) {
-  const [avatar, setAvatar] = useState("");
+  const [avatar, setAvatar] = useState('');
   const [isValid, setValid] = useState(false);
   const formRef = useRef();
 
@@ -20,7 +20,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, isLoading, onOverlay
   };
 
   useEffect(() => {
-    setAvatar("");
+    setAvatar('');
     resetValidation(formRef.current, setValid);
   }, [isOpen]);
 

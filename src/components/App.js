@@ -24,12 +24,17 @@ function App() {
   }, []);
 
   useEffect(() => {
-    document.addEventListener("keydown", (evt) => {
+    function handleEscClose(evt) {
       if (evt.key === "Escape") {
         closeAllPopups();
       }
-    });
-  }, []);
+      }
+  if (isEditProfilePopupOpen || isAddPlacePopupOpen || isEditAvatarPopupOpen || isImagePopupOpen || isConfirmPopupOpen || isLoading) {
+    document.addEventListener('keydown', handleEscClose);
+  }
+  return () => document.removeEventListener('keydown', handleEscClose);
+});
+
 
   const [isEditProfilePopupOpen, setEditProfilePopup] = useState(false);
   const [isAddPlacePopupOpen, setAddPlacePopup] = useState(false);
