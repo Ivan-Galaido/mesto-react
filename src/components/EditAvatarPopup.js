@@ -3,25 +3,25 @@ import { handleValidity, resetValidation } from "../utils/form-validation";
 import PopupWithForm from "./PopupWithForm";
 
 function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, isLoading, onOverlayClose }) {
-  const [avatar, setAvatar] = useState('');
+
   const [isValid, setValid] = useState(false);
   const formRef = useRef();
+  const inputRef = useRef();
 
-  const handleChangeAvatar = (evt) => {
-    setAvatar(evt.target.value);
-    handleValidity(formRef.current, setValid);
-  };
-
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    onUpdateAvatar({
-      avatar: avatar,
-    });
-  };
-
-  useEffect(() => {
-    setAvatar('');
-    resetValidation(formRef.current, setValid);
+  const handleChangeAvatar = (evt) => { 
+      handleValidity(formRef.current, setValid); 
+  }; 
+  
+  const handleSubmit = (evt) => { 
+      evt.preventDefault(); 
+      onUpdateAvatar({ 
+        avatar: inputRef.current.value,
+      }); 
+  }; 
+  
+  useEffect(() => { 
+      inputRef.current.value = ''; 
+      resetValidation(formRef.current, setValid); 
   }, [isOpen]);
 
   return (
@@ -39,14 +39,15 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, isLoading, onOverlay
       isValid={isValid}
     >
       <div className="form__input-container">
-        <input
-          className="form__input form__input_el_avatar-link"
-          id="avatar-link-input"
-          type="url"
-          name="avatar"
-          placeholder="Ссылка на картинку"
-          onChange={handleChangeAvatar}
-          value={avatar || ""}
+      <input 
+          className="form__input form__input_el_avatar-link" 
+          id="avatar-link-input" 
+          type="url" 
+          name="avatar" 
+          placeholder="Ссылка на картинку" 
+          onChange={handleChangeAvatar}  
+          
+          ref={inputRef}
           required
         />
         <span className="form__error avatar-link-input-error"></span>
