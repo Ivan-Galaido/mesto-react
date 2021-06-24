@@ -87,8 +87,8 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-22',
-  token: '4be74147-2291-42af-86cc-888d238ac780'
+  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-23',
+  token: '2b6beafc-e8e7-4379-a94e-86e1cc8c1a2b'
 });
 
 export default api;
