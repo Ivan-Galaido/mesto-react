@@ -3,7 +3,6 @@ import { handleValidity, resetValidation } from "../utils/form-validation";
 import PopupWithForm from "./PopupWithForm";
 
 function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, isLoading, onOverlayClose }) {
-
   const [isValid, setValid] = useState(false);
   const formRef = useRef();
   const inputRef = useRef();
